@@ -1,0 +1,426 @@
+﻿VTYS Projesi İçin Mühendislik Süreci
+FAZ 1 — Problem Tanımı ve Sistem Sınırları
+
+Bu aşamada hiç SQL yazılmaz.
+
+
+    1.1 Sistem Tanımı
+    Sistem ne yapar?
+    Kimler kullanır?
+    Hangi işlemler yapılabilir?
+
+    Örneğin:
+        Aktörler:
+        Müşteri
+        Restoran
+        Kurye
+        Admin
+        Askıda yemek yararlanıcısı
+
+
+    1.2 Use Case Listesi
+    Sistemin yaptığı tüm işlemler listelenir.
+    Örnek:
+        Müşteri:
+        Hesap oluşturur
+        Restoranları görüntüler
+        Sepete ürün ekler
+        Sipariş verir
+        Askıda yemek bağışı yapar
+
+        Restoran:
+        Menü oluşturur
+        Ürün ekler
+        Siparişleri yönetir
+
+        Kurye:
+        Siparişi teslim alır
+        Siparişi teslim eder
+
+        Askıda Yemek:
+        Bağış yapılır
+        Havuz oluşur
+        İhtiyaç sahibi kullanır
+
+
+    1.3 İş Kuralları (Business Rules)
+    Bu proje notunun büyük kısmı burada.
+
+    Örnek:
+        Bir müşteri birden fazla sipariş verebilir.
+        Bir sipariş bir restorana aittir.
+        Bir sipariş bir veya daha fazla üründen oluşur.
+        Bir sipariş bir kurye tarafından teslim edilir.
+        Askıda yemek bağışı anonim olabilir.
+        Askıda yemek sadece doğrulanmış kullanıcılar tarafından kullanılabilir.
+        Askıda yemek bakiyesi negatif olamaz.
+
+
+
+
+FAZ 2 — Kavramsal Veri Modeli (Conceptual Model)
+Bu aşamada Entity'ler belirlenir.
+
+    2.1 Entity (Varlık) Listesi
+
+    Örnek:
+        User
+        Customer
+        Restaurant
+        Courier
+        Menu
+        MenuItem
+        Order
+        OrderItem
+        Payment
+        Donation
+        SuspendedMealPool
+        SuspendedMealUsage
+        Address
+        Review
+
+
+    2.2 Entity Özellikleri
+    Her varlık için alanlar belirlenir.
+
+    Örnek:
+        User
+            user_id
+            name
+            email
+            phone
+            password
+            created_at
+
+        Restaurant
+            restaurant_id
+            name
+            rating
+            address_id
+            is_active
+
+
+    2.3 İlişki Türleri
+    Her entity arasındaki ilişki belirlenir.
+
+    Örnek:
+        Customer → Order
+        1 : N
+
+        Order → OrderItem
+        1 : N
+
+        Menu → MenuItem
+        1 : N
+
+        Order → MenuItem
+        N : M
+        (bu yüzden OrderItem gerekir)
+
+        Customer → Donation
+        1 : N
+
+        Donation → AskidaMealPool
+        1 : 1
+
+        AskidaMealPool → Usage
+        1 : N
+
+
+
+
+AZ 3 — ER Diyagramı
+Burada tüm sistem görselleştirilir.
+
+ER Diyagram İçeriği
+
+Gösterilecekler:
+    Entity
+    Attribute
+    Primary Key
+    Foreign Key
+    Relationship
+    Cardinality
+
+Örnek:
+    Customer (1) ---- (N) Order
+
+    Order (1) ---- (N) OrderItem
+
+    MenuItem (1) ---- (N) OrderItem
+
+Araç önerileri:
+    draw.io
+    dbdiagram.io
+    Lucidchart
+
+
+
+
+FAZ 4 — Mantıksal Veri Modeli (Relational Schema)
+
+Burada ER diyagramı ilişkisel modele çevrilir.
+
+Örnek:
+
+    Customers
+    ------------------
+        customer_id PK
+        user_id FK
+        address_id FK
+    
+    Orders
+    ------------------
+        order_id PK
+        customer_id FK
+        restaurant_id FK
+        courier_id FK
+        status
+        total_price 
+        created_at
+
+    OrderItems
+    ------------------
+        order_item_id PK
+        order_id FK
+        menu_item_id FK
+        quantity
+        price
+
+
+
+
+FAZ 5 — Normalizasyon
+Proje özellikle 3NF istiyor.
+
+Kontrol:
+    1NF
+        Atomic data
+        No repeating groups
+
+    2NF
+        Partial dependency yok
+
+    3NF
+        Transitive dependency yok
+
+Örnek kötü tasarım:
+    Orders
+    restaurant_name
+    restaurant_phone
+
+Bu yanlış çünkü:
+    restaurant bilgisi Orders tablosuna ait değil.
+
+
+
+
+FAZ 6 — Fiziksel Tasarım (SQL DDL)
+Artık SQL yazılır.
+
+6.1 CREATE TABLE
+    PK
+    FK
+    Constraints
+
+Örnek:
+    CREATE TABLE Customers (
+        customer_id INT PRIMARY KEY,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) UNIQUE NOT NULL
+    );
+
+
+6.2 Constraints
+Projede zorunlu:
+    PK
+    FK
+    CHECK
+    UNIQUE
+    NOT NULL
+
+    Örnek:
+        CHECK (price > 0)
+        CHECK (rating BETWEEN 1 AND 5)
+
+
+6.3 Soft Delete
+    is_active BOOLEAN
+
+
+
+
+FAZ 7 — Test Verisi (DML)
+Projede zorunlu.
+
+Minimum:
+    5 restoran
+    50 ürün
+    20 müşteri
+    100 sipariş
+    askıda yemek bağışı
+    INSERT INTO Restaurants ...
+
+
+
+
+FAZ 8 — Analitik Sorgular
+
+8.1 JOIN
+
+    Sipariş fişi:
+        Customers
+        Orders
+        OrderItems
+        MenuItems
+
+
+8.2 GROUP BY Analizi
+
+    Örnek:
+        restoran bazlı gelir
+        sipariş sayısı
+
+8.3 Subquery
+
+    Örnek:
+        askida yemek bağışı yapmayan müşteriler
+
+
+
+
+FAZ 9 — View Tasarımı
+
+Projede en az 2 view
+
+Örnek:
+    vw_active_restaurants
+    vw_askida_pool
+
+
+
+
+FAZ 10 — Trigger
+Projede en az 2
+
+Örnek:
+
+Trigger 1
+    Sipariş teslim edilince:
+        restaurant.total_revenue += order_total
+
+Trigger 2
+    Askıda yemek kullanıldığında:
+        pool_balance -= meal_price
+
+
+
+
+FAZ 11 — Index Tasarımı
+
+Arama kolonları:
+    email
+    restaurant_id
+    order_date
+
+CREATE INDEX idx_order_customer
+ON Orders(customer_id)
+
+
+
+
+FAZ 12 — Sistem Testi
+
+Kontrol edilir:
+    FK çalışıyor mu
+    trigger doğru mu
+    havuz bakiyesi düşüyor mu
+
+
+
+
+FAZ 13 — Dokümantasyon
+
+Gerekli belgeler:
+    1️⃣ İş Kuralları Dokümanı
+    2️⃣ ER Diyagram
+    3️⃣ SQL Dosyası
+
+İçinde:
+    DDL
+    DML
+    Queries
+    Views
+    Triggers
+    Index
+
+
+
+
+FAZ 14 — GitHub Süreci
+
+Repo yapısı:
+
+    food-order-db
+    │
+    ├── docs
+    │   ├── business_rules.md
+    │   ├── er_diagram.png
+    │
+    ├── sql
+    │   ├── schema.sql
+    │   ├── seed_data.sql
+    │   ├── queries.sql
+    │
+    └── README.md
+
+
+Commit örneği:
+
+    commit 1
+    initial ER design
+
+    commit 2
+    tables created
+
+    commit 3
+    mock data
+
+    commit 4
+    queries
+
+    commit 5
+    triggers views
+
+
+
+
+FAZ 15 — Final Savunma Hazırlığı
+
+Şunları ezbere bilmen gerekir:
+    neden OrderItem tablosu var
+    neden N:M ilişki var
+    neden trigger kullandın
+    neden index attın
+    askıda yemek mantığı
+
+
+
+Proje Geliştirme Adım Listesi
+
+1 Sistem Tanımı
+2 Use Case Listesi
+3 İş Kuralları (Business Rules)
+4 Entity Listesi
+5 Entity Özellikleri (Attributes)
+6 Entity İlişkileri (Cardinality)
+7 ER Diyagramı
+8 Relational Schema (Tablo Taslağı)
+9 Normalizasyon (1NF → 3NF)
+10 SQL Tabloları (DDL)
+11 Mock Data (INSERT)
+12 Analitik Sorgular (JOIN / GROUP BY / Subquery)
+13 Views
+14 Triggers
+15 Index
+16 Sistem Testi
