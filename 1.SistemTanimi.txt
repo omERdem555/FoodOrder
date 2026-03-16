@@ -19,32 +19,134 @@ Sistem içerisinde farklı kullanıcı rolleri bulunur ve her rolün sistem içi
 ve yetkileri vardır. Bu aktörler aşağıdaki gibidir:
 
 
-Müşteri:
-Platforma kayıt olan kullanıcıdır. Restoranları görüntüleyebilir, menülerden ürün seçerek sipariş 
-oluşturabilir, ödeme yapabilir ve sipariş geçmişini görüntüleyebilir. Ayrıca isterse askıda yemek 
-havuzuna bağış yapabilir.
+Kullanıcı
+
+Platformu kullanan tüm bireyleri temsil eden temel varlıktır. Sistemdeki her kullanıcı 
+öncelikle bir kullanıcı hesabına sahiptir ve bu hesap üzerinden sisteme giriş yapar. 
+Kullanıcı bilgileri; ad, soyad, e-posta adresi, telefon numarası ve şifre gibi temel 
+kimlik ve iletişim bilgilerinden oluşur.
+
+Bir kullanıcı sisteme kayıt olduktan sonra sistem içerisindeki rolüne göre farklı 
+yapılara dahil olabilir. Örneğin bir kullanıcı müşteri olabilir, kurye olabilir 
+veya yönetici yetkilerine sahip olabilir. Bu yapı sayesinde kullanıcı bilgilerinin 
+tekrar edilmesi engellenir ve sistemde merkezi bir kullanıcı yönetimi sağlanır.
 
 
-Restoran:
-Sisteme kayıtlı işletmelerdir. Restoranlar kendi menülerini oluşturabilir, ürün ekleyip kaldırabilir, 
-ürün fiyatlarını güncelleyebilir ve gelen siparişleri yönetebilir. Siparişler hazırlanma sürecine alınır 
-ve kurye teslimatına hazır hale getirilir.
+Müşteri
+
+Müşteri, platformu kullanarak restoranlardan yemek siparişi veren kullanıcıdır. 
+Müşteriler restoranları görüntüleyebilir, menülerde bulunan ürünleri inceleyebilir 
+ve istedikleri ürünleri seçerek sipariş oluşturabilirler.
+
+Müşteriler ayrıca sipariş geçmişlerini görüntüleyebilir, platformda bulunan restoranlar 
+hakkında değerlendirme yapabilir ve isterlerse askıda yemek havuzuna bağışta bulunabilirler.
+
+Sistem içerisinde bazı müşteriler doğrulanmış ihtiyaç sahibi olarak işaretlenebilir. 
+Bu kullanıcılar askıda yemek havuzunda bulunan bağışlardan yararlanarak ücretsiz 
+sipariş verebilirler.
 
 
-Kurye:
-Siparişlerin restoranlardan müşterilere teslim edilmesini sağlayan kullanıcıdır. Kurye sistemde kendisine 
-atanan siparişleri görüntüleyebilir, siparişi teslim alabilir ve teslim edildi olarak işaretleyebilir.
+Kurye
+
+Kurye, restoranlardan alınan siparişlerin müşterilere ulaştırılmasını sağlayan kullanıcıdır. 
+Kurye sistemde kendisine atanan siparişleri görüntüleyebilir ve bu siparişleri restorandan 
+teslim alarak müşteriye ulaştırır.
+
+Teslimat süreci boyunca sipariş durumu sistemde güncellenir ve teslimat tamamlandığında 
+sipariş “teslim edildi” olarak işaretlenir. Böylece sipariş süreci hem müşteri hem de 
+restoran tarafından takip edilebilir.
 
 
-Admin (Yönetici):
-Sistemin genel yönetiminden sorumlu kullanıcıdır. Kullanıcı hesaplarını yönetebilir, restoran kayıtlarını 
-kontrol edebilir, askıda yemek havuzunu izleyebilir ve sistemdeki genel operasyonları denetleyebilir.
+Admin (Yönetici)
+
+Admin, sistemin genel yönetiminden sorumlu kullanıcıdır. Yönetici kullanıcılar platformun 
+sağlıklı bir şekilde çalışmasını sağlamak amacıyla sistem üzerinde geniş yetkilere sahiptir.
+
+Admin kullanıcıları; kullanıcı hesaplarını yönetebilir, restoran kayıtlarını denetleyebilir, 
+kurye hesaplarını kontrol edebilir ve askıda yemek havuzunda gerçekleşen bağış ve kullanım 
+işlemlerini takip edebilir. Ayrıca sistemde oluşabilecek hatalı veya kötü niyetli kullanımları 
+önlemek amacıyla gerekli müdahaleleri yapabilirler.
 
 
-Askıda Yemek Yararlanıcısı:
-Sistem tarafından doğrulanmış ihtiyaç sahibi kullanıcıdır. Askıda yemek havuzunda bulunan bağışları 
-kullanarak ücretsiz sipariş verebilir. Bu kullanıcılar normal müşteriler gibi sipariş oluşturabilir 
-ancak ödeme yerine askıda yemek havuzundaki bakiyeyi kullanırlar.
+Restoran
+
+Restoranlar platform üzerinde yemek hizmeti sunan işletmelerdir. Her restoran kendi menüsünü 
+oluşturabilir ve menüde bulunan ürünleri yönetebilir. Restoran yetkilileri ürün ekleyebilir, 
+ürün fiyatlarını güncelleyebilir veya ürünleri menüden kaldırabilir.
+
+Müşteriler tarafından verilen siparişler restorana ulaştığında restoran bu siparişleri 
+görüntüler ve hazırlık sürecini başlatır. Sipariş hazırlandıktan sonra kurye teslimatına 
+verilerek müşteriye ulaştırılır.
+
+
+Askıda Yemek Bağışı
+
+Askıda yemek bağışı, müşterilerin ihtiyaç sahibi kullanıcılar için yemek veya bakiye bağışında 
+bulunabildiği bir sosyal dayanışma mekanizmasıdır. Bir müşteri askıda yemek havuzuna bağış 
+yaptığında bağış miktarı sistem tarafından kaydedilir ve havuzdaki toplam bakiyeye eklenir.
+
+Bağış işlemleri kullanıcı tarafından anonim olarak yapılabilir veya bağış yapan kişi açık 
+şekilde kaydedilebilir. Böylece kullanıcılar isterlerse kimliklerini gizleyerek de bağış yapabilirler.
+
+
+Askıda Yemek Havuzu
+
+Askıda yemek havuzu, kullanıcılar tarafından yapılan bağışların toplandığı merkezi bir sistem 
+bileşenidir. Bu havuz içerisinde yapılan tüm bağışların toplam değeri tutulur ve ihtiyaç sahibi 
+kullanıcılar bu havuzdan yararlanarak sipariş verebilirler.
+
+Havuzdaki bakiye, bağış yapıldığında artar ve ihtiyaç sahibi bir kullanıcı askıda yemek kullanarak 
+sipariş verdiğinde sistem tarafından otomatik olarak azaltılır. Bu mekanizma sayesinde bağışların 
+şeffaf ve kontrollü bir şekilde kullanılabilmesi sağlanır.
+
+
+Askıda Yemek Kullanımı
+
+Askıda yemek kullanımı, doğrulanmış ihtiyaç sahibi kullanıcıların askıda yemek havuzundaki 
+bağışları kullanarak sipariş oluşturmasını ifade eder. Bu işlem sırasında kullanıcı normal 
+bir sipariş oluşturur ancak ödeme işlemi yerine askıda yemek havuzundaki bakiye kullanılır.
+
+Sistem bu kullanım işlemini kaydeder ve kullanılan miktarı havuzdaki toplam bakiyeden düşer. 
+Böylece yapılan bağışların kim tarafından ve ne zaman kullanıldığı takip edilebilir.
+
+
+Menü
+
+Menü, restoranların müşterilere sunduğu yemek listesini temsil eder. Her restoran kendi menüsünü 
+oluşturabilir ve bu menü içerisinde farklı yemek kategorileri veya ürün grupları yer alabilir.
+
+Müşteriler restoranları incelerken menüler üzerinden sunulan ürünleri görüntüleyebilir ve sipariş 
+vermek istedikleri ürünleri buradan seçebilirler.
+
+
+Menü Ürünleri
+
+Menü ürünleri, restoran menüsünde yer alan yemekleri veya içecekleri ifade eder. Her ürünün bir 
+adı, fiyatı ve aktiflik durumu bulunur. Restoranlar bu ürünleri ekleyebilir, fiyatlarını güncelleyebilir 
+veya ürünleri menüden kaldırabilirler.
+
+Müşteriler sipariş oluştururken bu ürünlerden istediklerini seçerek siparişlerine eklerler.
+
+
+Sipariş
+
+Sipariş, bir müşterinin belirli bir restorandan seçtiği ürünleri satın almak amacıyla 
+oluşturduğu işlemi temsil eder. Bir sipariş müşteriye, restorana ve teslimatı gerçekleştirecek 
+olan kuryeye bağlıdır.
+
+Sipariş oluşturulduktan sonra sistem içerisinde farklı durumlara sahip olabilir. Örneğin 
+sipariş hazırlanıyor, kuryeye verildi veya teslim edildi gibi durumlar siparişin hangi aşamada 
+olduğunu gösterir.
+
+
+Sipariş Detayı
+
+Sipariş detayı, bir sipariş içerisinde bulunan ürünleri ve bu ürünlerin miktarlarını gösteren 
+bileşendir. Bir sipariş birden fazla üründen oluşabileceği için sipariş detayları siparişin 
+içeriğini temsil eder.
+
+Bu yapı sayesinde bir sipariş içerisinde hangi ürünlerin bulunduğu, kaç adet sipariş edildiği 
+ve ürünlerin birim fiyatlarının ne olduğu sistem tarafından kayıt altına alınır.
 
 
 Sistem içerisinde gerçekleştirilebilen temel işlemler şunlardır:
