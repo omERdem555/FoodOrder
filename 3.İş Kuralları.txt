@@ -1,0 +1,98 @@
+Kullanici
+
+-Her kullanıcı sistemde benzersiz bir e-posta adresine sahip olmalıdır.
+-Her kullanıcı tek bir kullanıcı kaydına sahip olmalıdır.
+-Bir kullanıcı müşteri, kurye veya admin rolüne sahip olabilir.
+-Bir kullanıcı birden fazla rol ile ilişkilendirilebilir.
+-Pasif hale getirilen bir kullanıcı sisteme giriş yapamaz.
+
+
+Musteri
+
+-Her müşteri kaydı bir kullanıcıya bağlıdır.
+-Bir müşteri birden fazla sipariş verebilir.
+-Bir müşteri birden fazla askıda yemek bağışı yapabilir.
+-Bir müşteri askıda yemek havuzundan birden fazla kez yararlanabilir.
+-Askıda yemek kullanabilmek için müşterinin ihtiyaç sahibi olarak doğrulanmış olması gerekir.
+
+
+Kurye
+
+-Her kurye kaydı bir kullanıcıya bağlıdır.
+-Bir kurye birden fazla siparişi teslim edebilir.
+-Bir sipariş aynı anda yalnızca bir kurye tarafından teslim edilir.
+-Pasif durumdaki bir kurye yeni sipariş teslim alamaz.
+
+
+Admin
+
+-Her admin kaydı bir kullanıcıya bağlıdır.
+-Admin kullanıcılar kullanıcı hesaplarını yönetebilir.
+-Admin kullanıcılar restoran kayıtlarını denetleyebilir.
+-Admin kullanıcılar askıda yemek bağışlarını ve kullanım işlemlerini görüntüleyebilir.
+-Admin kullanıcılar ihtiyaç sahibi müşteri doğrulaması yapabilir.
+
+
+Restoran
+
+-Her restoran sistemde tek bir restoran kaydı ile temsil edilir.
+-Bir restoran bir veya daha fazla menüye sahip olabilir.
+-Bir restoran birden fazla sipariş alabilir.
+-Pasif hale getirilen bir restoran yeni sipariş alamaz.
+
+
+Menu
+
+-Her menü bir restorana aittir.
+-Bir menü bir veya daha fazla menü ürününden oluşabilir.
+-Bir restoran birden fazla menü oluşturabilir.
+
+
+MenuUrun
+
+-Her menü ürünü bir menüye bağlıdır.
+-Bir menü ürünü birden fazla sipariş detayında yer alabilir.
+-Bir menü ürününün fiyatı sıfırdan büyük olmalıdır.
+-Pasif hale getirilen bir menü ürünü yeni siparişlerde seçilemez.
+
+
+Siparis
+
+-Her sipariş bir müşteriye aittir.
+-Her sipariş bir restorana aittir.
+-Bir sipariş bir veya daha fazla sipariş detayından oluşur.
+-Bir sipariş bir kurye tarafından teslim edilir.
+-Bir siparişin toplam tutarı sıfırdan büyük olmalıdır.
+
+
+SiparisDetay
+
+-Her sipariş detayı bir siparişe bağlıdır.
+-Her sipariş detayı bir menü ürününe bağlıdır.
+-Bir sipariş detayı en az bir adet ürün içermelidir.
+-Sipariş detayı içerisindeki ürün adedi sıfırdan büyük olmalıdır.
+
+
+AskidaYemekBagis
+
+-Her askıda yemek bağışı bir müşteri tarafından yapılır.
+-Bir müşteri birden fazla bağış yapabilir.
+-Askıda yemek bağışı anonim olarak yapılabilir.
+-Yapılan bağış miktarı sıfırdan büyük olmalıdır.
+-Yapılan bağışlar askıda yemek havuzuna eklenir.
+
+
+AskidaYemekHavuzu
+
+-Askıda yemek havuzu sistemde tek bir havuz olarak bulunur.
+-Havuzdaki bakiye yapılan bağışlarla artar.
+-Havuzdaki bakiye askıda yemek kullanıldığında azalır.
+-Askıda yemek havuzunun bakiyesi negatif olamaz.
+
+
+AskidaYemekKullanim
+
+-Her askıda yemek kullanımı bir müşteri tarafından gerçekleştirilir.
+-Askıda yemek kullanımı bir sipariş ile ilişkilidir.
+-Askıda yemek yalnızca doğrulanmış ihtiyaç sahibi müşteriler tarafından kullanılabilir.
+-Askıda yemek kullanımı sırasında havuz bakiyesi otomatik olarak düşürülür.
