@@ -1,0 +1,81 @@
+Kullanıcı
+
+-Kullanıcı, platforma erişim sağlayan tüm bireyleri temsil eder. Sistem üzerinde 
+gerçekleştirilen işlemlerin çoğu kullanıcı hesabı üzerinden yapılır.
+Kullanıcı aşağıdaki işlemleri gerçekleştirebilir:
+-Platforma kayıt olur
+-Sisteme giriş yapar
+-Profil bilgilerini görüntüler
+-Profil bilgilerini günceller
+-Hesabını pasif hale getirir
+
+
+Müşteri
+
+-Müşteri, platform üzerinden restoranlardan yemek siparişi veren kullanıcıdır.
+Müşteri aşağıdaki işlemleri gerçekleştirebilir:
+-Restoranları görüntüler
+-Restoran menülerini inceler
+-Menü ürünlerini görüntüler
+-Sepete ürün ekler
+-Sepetten ürün çıkarır
+-Sipariş oluşturur
+-Sipariş geçmişini görüntüler
+-Sipariş durumunu takip eder
+-Askıda yemek bağışı yapar
+Eğer müşteri sistem tarafından ihtiyaç sahibi olarak doğrulanmışsa ayrıca şu işlemleri gerçekleştirebilir:
+-Askıda yemek havuzundaki bakiyeyi görüntüler
+-Askıda yemek kullanarak sipariş verir
+
+
+Restoran
+
+-Restoranlar platform üzerinde yemek hizmeti sunan işletmelerdir.
+Restoran aşağıdaki işlemleri gerçekleştirebilir:
+-Restoran bilgilerini görüntüler
+-Menü oluşturur
+-Menü bilgilerini günceller
+-Menüye ürün ekler
+-Menü ürünlerini günceller
+-Menü ürünlerini pasif hale getirir
+-Gelen siparişleri görüntüler
+-Sipariş durumunu günceller
+-Siparişi hazırlık sürecine alır
+-Siparişi kuryeye teslim eder
+
+
+Kurye
+
+-Kurye, restoranlardan alınan siparişleri müşterilere ulaştıran kullanıcıdır.
+-Kurye aşağıdaki işlemleri gerçekleştirebilir:
+-Kendisine atanan siparişleri görüntüler
+-Siparişi restorandan teslim alır
+-Teslimat sürecini başlatır
+-Siparişi müşteriye teslim eder
+-Siparişi teslim edildi olarak işaretler
+
+
+Admin (Yönetici)
+
+-Admin, sistemin genel yönetiminden sorumlu kullanıcıdır.
+Admin aşağıdaki işlemleri gerçekleştirebilir:
+-Kullanıcı hesaplarını görüntüler
+-Kullanıcı hesaplarını pasif hale getirir
+-Restoran kayıtlarını görüntüler
+-Restoran kayıtlarını onaylar veya pasifleştirir
+-Kurye hesaplarını yönetir
+-Askıda yemek bağışlarını görüntüler
+-Askıda yemek havuzunu izler
+-İhtiyaç sahibi kullanıcı doğrulaması yapar
+
+
+Askıda Yemek Sistemi
+
+-Askıda yemek sistemi, bağışların toplanmasını ve ihtiyaç sahibi kullanıcılar tarafından kullanılmasını 
+sağlayan mekanizmadır.
+Sistem aşağıdaki işlemleri gerçekleştirir:
+-Kullanıcıdan askıda yemek bağışı kabul eder
+-Yapılan bağışları askıda yemek havuzuna ekler
+-Havuzdaki toplam bakiyeyi günceller
+-İhtiyaç sahibi kullanıcı askıda yemek kullandığında havuz bakiyesini düşürür
+-Askıda yemek kullanım işlemlerini kayıt altına alır
