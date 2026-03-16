@@ -1,0 +1,61 @@
+Sistem Tanımı
+
+Bu sistem, kullanıcıların çevrimiçi olarak restoranlardan yemek siparişi verebildiği, 
+restoranların menülerini yönetebildiği ve kuryelerin siparişleri müşterilere ulaştırdığı 
+bir Çevrimiçi Yemek Sipariş Platformudur. Sistem aynı zamanda sosyal sorumluluk amacıyla geliştirilen 
+“Askıda Yemek” modülünü içerir. Bu modül sayesinde kullanıcılar ihtiyaç sahibi kişiler için yemek 
+bağışında bulunabilir ve doğrulanmış ihtiyaç sahipleri bu bağışlardan yararlanarak ücretsiz sipariş 
+verebilir.
+
+
+Platformun temel amacı; müşteriler ile restoranlar arasında dijital bir sipariş altyapısı kurmak, 
+siparişlerin restoran ve kurye süreçleriyle yönetilmesini sağlamak ve bunun yanında bağış temelli 
+bir yemek havuzu oluşturarak sosyal dayanışmayı desteklemektir. Sistem, sipariş oluşturma, sipariş 
+takibi, menü yönetimi, ödeme işlemleri ve teslimat süreçlerinin kayıt altına alındığı bir veritabanı 
+altyapısı üzerine kuruludur.
+
+
+Sistem içerisinde farklı kullanıcı rolleri bulunur ve her rolün sistem içinde farklı sorumlulukları 
+ve yetkileri vardır. Bu aktörler aşağıdaki gibidir:
+
+
+Müşteri:
+Platforma kayıt olan kullanıcıdır. Restoranları görüntüleyebilir, menülerden ürün seçerek sipariş 
+oluşturabilir, ödeme yapabilir ve sipariş geçmişini görüntüleyebilir. Ayrıca isterse askıda yemek 
+havuzuna bağış yapabilir.
+
+
+Restoran:
+Sisteme kayıtlı işletmelerdir. Restoranlar kendi menülerini oluşturabilir, ürün ekleyip kaldırabilir, 
+ürün fiyatlarını güncelleyebilir ve gelen siparişleri yönetebilir. Siparişler hazırlanma sürecine alınır 
+ve kurye teslimatına hazır hale getirilir.
+
+
+Kurye:
+Siparişlerin restoranlardan müşterilere teslim edilmesini sağlayan kullanıcıdır. Kurye sistemde kendisine 
+atanan siparişleri görüntüleyebilir, siparişi teslim alabilir ve teslim edildi olarak işaretleyebilir.
+
+
+Admin (Yönetici):
+Sistemin genel yönetiminden sorumlu kullanıcıdır. Kullanıcı hesaplarını yönetebilir, restoran kayıtlarını 
+kontrol edebilir, askıda yemek havuzunu izleyebilir ve sistemdeki genel operasyonları denetleyebilir.
+
+
+Askıda Yemek Yararlanıcısı:
+Sistem tarafından doğrulanmış ihtiyaç sahibi kullanıcıdır. Askıda yemek havuzunda bulunan bağışları 
+kullanarak ücretsiz sipariş verebilir. Bu kullanıcılar normal müşteriler gibi sipariş oluşturabilir 
+ancak ödeme yerine askıda yemek havuzundaki bakiyeyi kullanırlar.
+
+
+Sistem içerisinde gerçekleştirilebilen temel işlemler şunlardır:
+-Kullanıcı kayıt ve giriş işlemleri
+-Restoranların sisteme eklenmesi ve yönetilmesi
+-Restoran menülerinin oluşturulması ve güncellenmesi
+-Müşterilerin menülerden ürün seçerek sipariş oluşturması
+-Siparişlerin restoran tarafından hazırlanması
+-Siparişlerin kuryelere atanması ve teslim edilmesi
+-Sipariş durumlarının takip edilmesi
+-Müşterilerin askıda yemek havuzuna bağış yapabilmesi
+-Doğrulanmış kullanıcıların askıda yemek havuzundan ücretsiz sipariş verebilmesi
+-Sistem yöneticisinin kullanıcıları ve restoranları yönetebilmesi
+-Bu yapı sayesinde sistem, hem ticari bir yemek sipariş platformu hem de sosyal yardımlaşmayı destekleyen bir bağış mekanizması olarak çalışır. Tüm işlemler veritabanında kayıt altına alınarak sipariş süreçleri, bağış hareketleri ve kullanıcı etkileşimleri izlenebilir hale getirilir.
