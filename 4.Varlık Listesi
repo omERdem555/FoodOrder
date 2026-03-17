@@ -1,0 +1,60 @@
+1. Kullanıcı ve Rol Yapısı
+✔ Kullanici
+-Sistemdeki tüm bireylerin ana varlığı
+-Ortak alanlar burada tutulur (email, şifre, vs.)
+
+✔ Musteri
+-Kullanici’ye bağlı alt rol
+
+✔ Kurye
+-Kullanici’ye bağlı alt rol
+
+✔ Admin
+-Kullanici’ye bağlı alt rol
+
+
+
+2. Restoran ve Menü Yapısı
+✔ Restoran
+-Bağımsız varlık (Kullanıcıya bağlı yapmak opsiyonel)
+
+✔ Menu
+-Restoran’a bağlı
+
+✔ MenuKategori ⚠ (EKLEDİM)
+-Menu'ye bağlı
+
+✔ MenuUrun
+-Menü + kategori ilişkisi içerir
+
+
+
+3. Sipariş Sistemi
+✔ Siparis
+-Ana işlem varlığı
+
+✔ SiparisDetay
+-N:M ilişkiyi çözer (Sipariş ↔ MenüÜrün)
+
+
+
+4. Ödeme ve Adres
+✔ Odeme
+-Sipariş ile ilişkili
+
+✔ Adres
+-Kullanıcıya bağlı
+-Siparişe referans
+
+
+
+5. Askıda Yemek Sistemi
+✔ AskidaYemekBagis
+✔ AskidaYemekHavuzu
+✔ AskidaYemekKullanim
+
+
+
+6.Değerlendirme
+✔ Değerlendirme
+-Müşteriler restoranları değerlendirebilir
