@@ -118,6 +118,9 @@ oluşturabilir ve bu menü içerisinde farklı yemek kategorileri veya ürün gr
 Müşteriler restoranları incelerken menüler üzerinden sunulan ürünleri görüntüleyebilir ve sipariş 
 vermek istedikleri ürünleri buradan seçebilirler.
 
+Menü içerisinde ürünler kategorilere ayrılabilir (örneğin ana yemekler, içecekler, tatlılar). 
+Bu yapı kullanıcıların ürünleri daha kolay bulmasını sağlar.
+
 
 Menü Ürünleri
 
