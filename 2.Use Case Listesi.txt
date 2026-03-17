@@ -17,6 +17,12 @@ Müşteri aşağıdaki işlemleri gerçekleştirebilir:
 -Restoranları görüntüler
 -Restoran menülerini inceler
 -Menü ürünlerini görüntüler
+-Teslimat türü seçer (adrese teslim / restorandan teslim alma)
+-Adres ekler
+-Adreslerini yönetir
+-Sipariş için adres seçer
+-Ödeme yöntemi seçer
+-Ödeme işlemini gerçekleştirir
 -Sepete ürün ekler
 -Sepetten ürün çıkarır
 -Sipariş oluşturur
@@ -34,6 +40,8 @@ Restoran
 Restoran aşağıdaki işlemleri gerçekleştirebilir:
 -Restoran bilgilerini görüntüler
 -Menü oluşturur
+-Menü kategorisi oluşturur
+-Menü kategorilerini yönetir
 -Menü bilgilerini günceller
 -Menüye ürün ekler
 -Menü ürünlerini günceller
@@ -48,7 +56,7 @@ Kurye
 
 -Kurye, restoranlardan alınan siparişleri müşterilere ulaştıran kullanıcıdır.
 -Kurye aşağıdaki işlemleri gerçekleştirebilir:
--Kendisine atanan siparişleri görüntüler
+-Kendisine atanan adrese teslim siparişleri görüntüler
 -Siparişi restorandan teslim alır
 -Teslimat sürecini başlatır
 -Siparişi müşteriye teslim eder
@@ -67,6 +75,8 @@ Admin aşağıdaki işlemleri gerçekleştirebilir:
 -Askıda yemek bağışlarını görüntüler
 -Askıda yemek havuzunu izler
 -İhtiyaç sahibi kullanıcı doğrulaması yapar
+-Ödeme işlemlerini görüntüler
+-Şüpheli veya hatalı ödeme işlemlerine müdahale eder
 
 
 Askıda Yemek Sistemi
@@ -79,3 +89,4 @@ Sistem aşağıdaki işlemleri gerçekleştirir:
 -Havuzdaki toplam bakiyeyi günceller
 -İhtiyaç sahibi kullanıcı askıda yemek kullandığında havuz bakiyesini düşürür
 -Askıda yemek kullanım işlemlerini kayıt altına alır
+-Askıda yemek kullanımı ile yapılan siparişlerde ödeme işlemini gerçekleştirir
