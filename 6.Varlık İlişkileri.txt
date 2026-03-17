@@ -1,0 +1,174 @@
+Kullanıcı ve Roller
+-------------------
+Kullanici → Musteri
+1 : 0..1
+
+Kullanici → Kurye
+1 : 0..1
+
+Kullanici → Admin
+1 : 0..1
+
+
+
+Kullanıcı – Adres
+-----------------
+Kullanici → Adres
+1 : N
+
+
+
+Musteri – Sepet
+---------------
+Musteri → Sepet
+1 : N
+
+
+
+Sepet – SepetDetay
+------------------
+Sepet → SepetDetay
+1 : N
+
+
+
+MenuUrun – SepetDetay
+---------------------
+MenuUrun → SepetDetay
+1 : N
+
+
+
+Restoran – Menu
+---------------
+Restoran → Menu
+1 : N
+
+
+
+Menu – MenuKategori
+-------------------
+Menu → MenuKategori
+1 : N
+
+
+
+MenuKategori – MenuUrun
+-----------------------
+MenuKategori → MenuUrun
+1 : N
+
+
+
+Menu – MenuUrun
+---------------
+Menu → MenuUrun
+1 : N
+
+
+
+Musteri – Siparis
+-----------------
+Musteri → Siparis
+1 : N
+
+
+
+Restoran – Siparis
+------------------
+Restoran → Siparis
+1 : N
+
+
+
+Kurye – Siparis
+---------------
+Kurye → Siparis
+1 : N
+(0 da olabilir - pickup)
+
+
+
+Siparis – SiparisDetay
+----------------------
+Siparis → SiparisDetay
+1 : N
+
+
+
+MenuUrun – SiparisDetay
+-----------------------
+MenuUrun → SiparisDetay
+1 : N
+
+
+
+Siparis – MenuUrun
+------------------
+Siparis → MenuUrun
+N : M
+(Bu yüzden SiparisDetay gerekir)
+
+
+
+Siparis – Odeme
+---------------
+Siparis → Odeme
+1 : 1
+
+
+
+Musteri – AskidaYemekBagis
+--------------------------
+Musteri → AskidaYemekBagis
+1 : N
+
+
+
+AskidaYemekBagis – AskidaYemekHavuzu
+------------------------------------
+AskidaYemekBagis → AskidaYemekHavuzu
+N : 1
+
+
+
+AskidaYemekHavuzu – AskidaYemekKullanim
+---------------------------------------
+AskidaYemekHavuzu → AskidaYemekKullanim
+1 : N
+
+
+
+Musteri – AskidaYemekKullanim
+-----------------------------
+Musteri → AskidaYemekKullanim
+1 : 
+
+
+
+Siparis – AskidaYemekKullanim
+-----------------------------
+Siparis → AskidaYemekKullanim
+1 : 0..1
+
+
+
+Musteri – Degerlendirme
+-----------------------
+Musteri → Degerlendirme
+1 : N
+
+
+
+Restoran – Degerlendirme
+------------------------
+Restoran → Degerlendirme
+1 : N
+
+
+
+Adres – Siparis
+---------------
+Adres → Siparis
+1 : N
+(0 olabilir - pickup)
