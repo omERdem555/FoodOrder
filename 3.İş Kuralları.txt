@@ -43,6 +43,7 @@ Restoran
 
 Menu
 
+-Bir menü bir veya daha fazla kategori içerebilir.
 -Her menü bir restorana aittir.
 -Bir menü bir veya daha fazla menü ürününden oluşabilir.
 -Bir restoran birden fazla menü oluşturabilir.
@@ -50,6 +51,7 @@ Menu
 
 MenuUrun
 
+-Her menü ürünü bir kategoriye ait olabilir.
 -Her menü ürünü bir menüye bağlıdır.
 -Bir menü ürünü birden fazla sipariş detayında yer alabilir.
 -Bir menü ürününün fiyatı sıfırdan büyük olmalıdır.
@@ -58,10 +60,14 @@ MenuUrun
 
 Siparis
 
+-Bir sipariş bir ödeme kaydı ile ilişkilidir.
+-Bir siparişin teslimat türü sipariş oluşturulurken belirlenir.
 -Her sipariş bir müşteriye aittir.
 -Her sipariş bir restorana aittir.
 -Bir sipariş bir veya daha fazla sipariş detayından oluşur.
--Bir sipariş bir kurye tarafından teslim edilir.
+-Bir sipariş bir teslimat türüne sahiptir (adrese teslim veya restorandan teslim alma).
+-Sadece adrese teslim siparişler bir kurye tarafından teslim edilir.
+-Bir sipariş aynı anda en fazla bir kurye ile ilişkilendirilebilir.
 -Bir siparişin toplam tutarı sıfırdan büyük olmalıdır.
 
 
@@ -71,6 +77,24 @@ SiparisDetay
 -Her sipariş detayı bir menü ürününe bağlıdır.
 -Bir sipariş detayı en az bir adet ürün içermelidir.
 -Sipariş detayı içerisindeki ürün adedi sıfırdan büyük olmalıdır.
+
+
+Odeme
+
+-Her ödeme bir siparişe aittir.
+-Her sipariş en az bir ödeme kaydı ile ilişkilidir.
+-Bir ödeme belirli bir ödeme yöntemi ile gerçekleştirilir.
+-Askıda yemek kullanımı bir ödeme yöntemi olarak kabul edilir.
+-Bir ödemenin tutarı sıfırdan büyük olmalıdır.
+-Başarısız ödemeler siparişi tamamlanmış sayılmaz.
+
+
+Adres
+
+-Her adres bir kullanıcıya veya bir restorana ait olabilir.
+-Bir kullanıcı birden fazla adres tanımlayabilir.
+-Bir sipariş yalnızca bir teslimat adresine sahiptir.
+-Restorandan teslim alma siparişlerinde adres zorunlu değildir.
 
 
 AskidaYemekBagis
@@ -92,6 +116,7 @@ AskidaYemekHavuzu
 
 AskidaYemekKullanim
 
+-Askıda yemek kullanımı yalnızca ödeme yöntemi “askıda yemek” olan siparişlerde gerçekleşir.
 -Her askıda yemek kullanımı bir müşteri tarafından gerçekleştirilir.
 -Askıda yemek kullanımı bir sipariş ile ilişkilidir.
 -Askıda yemek yalnızca doğrulanmış ihtiyaç sahibi müşteriler tarafından kullanılabilir.
