@@ -138,6 +138,10 @@ Sipariş oluşturulduktan sonra sistem içerisinde farklı durumlara sahip olabi
 sipariş hazırlanıyor, kuryeye verildi veya teslim edildi gibi durumlar siparişin hangi aşamada 
 olduğunu gösterir.
 
+Siparişler farklı teslimat türlerine sahip olabilir. Bir sipariş “adrese teslim” (delivery) veya 
+“restorandan teslim alma” (pickup) şeklinde gerçekleştirilebilir. Adrese teslim siparişlerde kurye 
+süreci bulunurken, teslim alma siparişlerinde müşteri siparişi doğrudan restorandan alır.
+
 
 Sipariş Detayı
 
@@ -147,6 +151,16 @@ içeriğini temsil eder.
 
 Bu yapı sayesinde bir sipariş içerisinde hangi ürünlerin bulunduğu, kaç adet sipariş edildiği 
 ve ürünlerin birim fiyatlarının ne olduğu sistem tarafından kayıt altına alınır.
+
+
+Ödeme (Payment)
+
+Ödeme, müşterinin oluşturduğu siparişin finansal olarak tamamlanmasını sağlayan işlemdir. 
+Sistem içerisinde siparişler farklı ödeme yöntemleri ile ödenebilir. Bu yöntemler arasında 
+çevrimiçi ödeme ve askıda yemek bakiyesi kullanımı yer alır.
+
+Her sipariş bir ödeme kaydı ile ilişkilidir. Askıda yemek kullanılarak verilen siparişlerde 
+ödeme işlemi, askıda yemek havuzundan düşülen bakiye ile gerçekleştirilir.
 
 
 Sistem içerisinde gerçekleştirilebilen temel işlemler şunlardır:
