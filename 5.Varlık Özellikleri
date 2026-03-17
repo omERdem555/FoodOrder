@@ -1,0 +1,177 @@
+Kullanici
+---------
+kullanici_id PK
+ad
+soyad
+email (UNIQUE)
+telefon
+sifre
+kayit_tarihi
+aktif_mi
+
+
+
+Musteri
+-------
+musteri_id PK
+kullanici_id FK
+dogrulanmis_ihtiyac_sahibi BOOLEAN
+
+
+
+Kurye
+-----
+kurye_id PK
+kullanici_id FK
+arac_tipi
+aktif_mi
+
+
+
+Admin
+-----
+admin_id PK
+kullanici_id FK
+yetki_seviyesi
+
+
+
+Adres
+-----
+adres_id PK
+kullanici_id FK (NULL olabilir)
+adres_metni
+il
+ilce
+posta_kodu
+
+
+
+Restoran
+--------
+restoran_id PK
+ad
+telefon
+adres_id FK
+puan
+aktif_mi
+
+
+
+Menu
+----
+menu_id PK
+restoran_id FK
+ad
+
+
+
+MenuKategori
+------------
+kategori_id PK
+menu_id FK
+kategori_ad
+
+
+
+MenuUrun
+--------
+urun_id PK
+menu_id FK
+kategori_id FK
+urun_ad
+fiyat
+aktif_mi
+
+
+
+Siparis
+-------
+siparis_id PK
+musteri_id FK
+restoran_id FK
+kurye_id FK (NULL olabilir)
+adres_id FK (NULL olabilir - pickup için)
+siparis_tutari
+durum
+teslimat_turu (delivery / pickup)
+siparis_tarihi
+
+
+
+SiparisDetay
+------------
+siparis_detay_id PK
+siparis_id FK
+urun_id FK
+adet
+birim_fiyat
+
+
+
+Sepet 
+----- 
+sepet_id PK 
+musteri_id FK 
+restoran_id FK 
+olusturma_tarihi 
+guncelleme_tarihi 
+aktif_mi
+
+
+
+SepetDetay 
+---------- 
+sepet_detay_id PK 
+sepet_id FK 
+urun_id FK 
+adet birim_fiyat
+
+
+
+Odeme
+-----
+odeme_id PK
+siparis_id FK
+odeme_turu (kart / askida_yemek)
+tutar
+odeme_durumu
+odeme_tarihi
+
+
+
+AskidaYemekBagis
+----------------
+bagis_id PK
+musteri_id FK
+tutar
+anonim_mi
+tarih
+
+
+
+AskidaYemekHavuzu
+-----------------
+havuz_id PK
+toplam_bakiye
+
+
+
+AskidaYemekKullanim
+-------------------
+kullanim_id PK
+musteri_id FK
+siparis_id FK
+tutar
+tarih
+
+
+
+Degerlendirme
+-------------
+degerlendirme_id PK
+musteri_id FK
+restoran_id FK
+puan
+yorum
+tarih

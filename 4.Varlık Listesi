@@ -21,7 +21,7 @@
 ✔ Menu
 -Restoran’a bağlı
 
-✔ MenuKategori ⚠ (EKLEDİM)
+✔ MenuKategori
 -Menu'ye bağlı
 
 ✔ MenuUrun
@@ -35,6 +35,12 @@
 
 ✔ SiparisDetay
 -N:M ilişkiyi çözer (Sipariş ↔ MenüÜrün)
+
+✔ Sepet 
+-Kişinin sipraişlerini oluşturmasıdır.
+
+✔ SepetDetay
+-Tamamen bitmiş bir sepetin son halidir.
 
 
 
