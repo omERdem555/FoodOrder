@@ -129,7 +129,7 @@ Bu aşamada Entity'ler belirlenir.
 
 
 
-AZ 3 — ER Diyagramı
+FAZ 3 — ER Diyagramı
 Burada tüm sistem görselleştirilir.
 
 ER Diyagram İçeriği
