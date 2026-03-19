@@ -144,6 +144,7 @@ AskidaYemekBagis
 ----------------
 bagis_id PK
 musteri_id FK
+havuz_id FK   
 tutar
 anonim_mi
 tarih
@@ -162,6 +163,8 @@ AskidaYemekKullanim
 kullanim_id PK
 musteri_id FK
 siparis_id FK
+havuz_id FK   
+odeme_id FK   
 tutar
 tarih
 

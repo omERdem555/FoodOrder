@@ -118,6 +118,14 @@ Siparis → Odeme
 
 
 
+AskidaYemekKullanim – Odeme
+---------------
+AskidaYemekKullanim → Odeme
+1 : (0..1)
+
+
+
+
 Musteri – AskidaYemekBagis
 --------------------------
 Musteri → AskidaYemekBagis
