@@ -47,7 +47,7 @@ posta_kodu
 
 
 
-Restora
+Restoran
 --------
 restoran_id PK
 ad
