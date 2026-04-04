@@ -77,7 +77,6 @@ kategori_ad
 MenuUrun
 --------
 urun_id PK
-menu_id FK
 kategori_id FK
 urun_ad
 fiyat

@@ -46,17 +46,17 @@ Restoran → Menu
 
 
 
-Menu – MenuKategori
+MenuKategori - Menu 
 -------------------
-Menu → MenuKategori
-1 : N
+MenuKategori → Menu  
+N : 1
 
 
 
-MenuKategori – MenuUrun
+MenuUrun - MenuKategori 
 -----------------------
-MenuKategori → MenuUrun
-1 : N
+MenuUrun → MenuKategori  
+N : 1
 
 
 
@@ -150,7 +150,7 @@ AskidaYemekHavuzu → AskidaYemekKullanim
 Musteri – AskidaYemekKullanim
 -----------------------------
 Musteri → AskidaYemekKullanim
-1 : 
+1 : N
 
 
 
