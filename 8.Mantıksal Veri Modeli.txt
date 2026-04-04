@@ -1,0 +1,163 @@
+Kullanici
+------------------
+kullanici_id PK
+ad
+soyad
+email UNIQUE
+telefon
+sifre
+kayit_tarihi
+aktif_mi
+
+
+Musteri
+------------------
+musteri_id PK
+kullanici_id FK → Kullanici.kullanici_id
+dogrulanmis_ihtiyac_sahibi
+
+
+Kurye
+------------------
+kurye_id PK
+kullanici_id FK → Kullanici.kullanici_id
+arac_tipi
+aktif_mi
+
+
+Admin
+------------------
+admin_id PK
+kullanici_id FK → Kullanici.kullanici_id
+yetki_seviyesi
+
+
+Adres
+------------------
+adres_id PK
+kullanici_id FK → Kullanici.kullanici_id (NULL olabilir)
+adres_metni
+il
+ilce
+posta_kodu
+
+
+Restoran
+------------------
+restoran_id PK
+ad
+telefon
+adres_id FK → Adres.adres_id
+puan
+aktif_mi
+
+
+Menu
+------------------
+menu_id PK
+restoran_id FK → Restoran.restoran_id
+ad
+
+
+MenuKategori
+------------------
+kategori_id PK
+menu_id FK → Menu.menu_id
+kategori_ad
+
+
+MenuUrun
+------------------
+urun_id PK
+kategori_id FK → MenuKategori.kategori_id
+urun_ad
+fiyat
+aktif_mi
+
+
+Sepet
+------------------
+sepet_id PK
+musteri_id FK → Musteri.musteri_id
+restoran_id FK → Restoran.restoran_id
+olusturma_tarihi
+guncelleme_tarihi
+aktif_mi
+
+
+SepetDetay
+------------------
+sepet_detay_id PK
+sepet_id FK → Sepet.sepet_id
+urun_id FK → MenuUrun.urun_id
+adet
+birim_fiyat
+
+
+Siparis
+------------------
+siparis_id PK
+musteri_id FK → Musteri.musteri_id
+restoran_id FK → Restoran.restoran_id
+kurye_id FK → Kurye.kurye_id (NULL olabilir)
+adres_id FK → Adres.adres_id (NULL olabilir)
+siparis_tutari
+durum
+teslimat_turu
+siparis_tarihi
+
+
+SiparisDetay
+------------------
+siparis_detay_id PK
+siparis_id FK → Siparis.siparis_id
+urun_id FK → MenuUrun.urun_id
+adet
+birim_fiyat
+
+
+Odeme
+------------------
+odeme_id PK
+siparis_id FK → Siparis.siparis_id
+odeme_turu
+tutar
+odeme_durumu
+odeme_tarihi
+
+
+AskidaYemekHavuzu
+------------------
+havuz_id PK
+toplam_bakiye
+
+
+AskidaYemekBagis
+------------------
+bagis_id PK
+musteri_id FK → Musteri.musteri_id
+havuz_id FK → AskidaYemekHavuzu.havuz_id
+tutar
+anonim_mi
+tarih
+
+
+AskidaYemekKullanim
+------------------
+kullanim_id PK
+musteri_id FK → Musteri.musteri_id
+siparis_id FK → Siparis.siparis_id
+havuz_id FK → AskidaYemekHavuzu.havuz_id
+odeme_id FK → Odeme.odeme_id
+tutar
+tarih
+
+
+Degerlendirme
+------------------
+degerlendirme_id PK
+musteri_id FK → Musteri.musteri_id
+restoran_id FK → Restoran.restoran_id
+puan
+yorum
+tarih
