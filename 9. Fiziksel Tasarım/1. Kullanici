@@ -1,0 +1,10 @@
+CREATE TABLE Kullanici (
+    kullanici_id INT PRIMARY KEY IDENTITY(1,1),
+    ad VARCHAR(50) NOT NULL,
+    soyad VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    telefon VARCHAR(20),
+    sifre VARCHAR(255) NOT NULL,
+    kayit_tarihi DATETIME NOT NULL DEFAULT GETDATE(),
+    aktif_mi BIT NOT NULL DEFAULT 1
+);

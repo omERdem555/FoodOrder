@@ -1,0 +1,7 @@
+CREATE TABLE Musteri (
+    musteri_id INT PRIMARY KEY IDENTITY(1,1),
+    kullanici_id INT UNIQUE,
+    dogrulanmis_ihtiyac_sahibi BIT NOT NULL DEFAULT 0,
+
+    FOREIGN KEY (kullanici_id) REFERENCES Kullanici(kullanici_id)
+);

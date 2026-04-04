@@ -1,0 +1,10 @@
+CREATE TABLE Restoran (
+    restoran_id INT PRIMARY KEY IDENTITY(1,1),
+    ad VARCHAR(100) NOT NULL,
+    telefon VARCHAR(20),
+    adres_id INT,
+    puan DECIMAL(2,1) CHECK (puan BETWEEN 0 AND 5),
+    aktif_mi BIT NOT NULL DEFAULT 1,
+
+    FOREIGN KEY (adres_id) REFERENCES Adres(adres_id)
+);
