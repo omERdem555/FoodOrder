@@ -1,0 +1,4 @@
+INSERT INTO Musteri (kullanici_id, dogrulanmis_ihtiyac_sahibi)
+SELECT kullanici_id,
+CASE WHEN kullanici_id % 5 = 0 THEN 1 ELSE 0 END
+FROM Kullanici;

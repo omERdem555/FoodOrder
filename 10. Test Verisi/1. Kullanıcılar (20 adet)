@@ -1,0 +1,22 @@
+INSERT INTO Kullanici (ad, soyad, email, telefon, sifre)
+VALUES
+('Ali','Yılmaz','ali1@mail.com','111','123'),
+('Ayşe','Demir','ayse2@mail.com','222','123'),
+('Mehmet','Kaya','mehmet3@mail.com','333','123'),
+('Fatma','Çelik','fatma4@mail.com','444','123'),
+('Ahmet','Şahin','ahmet5@mail.com','555','123'),
+('Zeynep','Koç','zeynep6@mail.com','666','123'),
+('Can','Aydın','can7@mail.com','777','123'),
+('Elif','Arslan','elif8@mail.com','888','123'),
+('Burak','Yıldız','burak9@mail.com','999','123'),
+('Derya','Öztürk','derya10@mail.com','101','123'),
+('Kemal','Aslan','kemal11@mail.com','102','123'),
+('Hale','Doğan','hale12@mail.com','103','123'),
+('Murat','Kurt','murat13@mail.com','104','123'),
+('Selin','Ak','selin14@mail.com','105','123'),
+('Okan','Güneş','okan15@mail.com','106','123'),
+('Ece','Bulut','ece16@mail.com','107','123'),
+('Serkan','Polat','serkan17@mail.com','108','123'),
+('Buse','Er','buse18@mail.com','109','123'),
+('Emre','Tekin','emre19@mail.com','110','123'),
+('Naz','Işık','naz20@mail.com','111','123');

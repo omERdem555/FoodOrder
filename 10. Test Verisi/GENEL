@@ -1,0 +1,195 @@
+INSERT INTO Kullanici (ad, soyad, email, telefon, sifre)
+VALUES
+('Ali','Yılmaz','ali1@mail.com','111','123'),
+('Ayşe','Demir','ayse2@mail.com','222','123'),
+('Mehmet','Kaya','mehmet3@mail.com','333','123'),
+('Fatma','Çelik','fatma4@mail.com','444','123'),
+('Ahmet','Şahin','ahmet5@mail.com','555','123'),
+('Zeynep','Koç','zeynep6@mail.com','666','123'),
+('Can','Aydın','can7@mail.com','777','123'),
+('Elif','Arslan','elif8@mail.com','888','123'),
+('Burak','Yıldız','burak9@mail.com','999','123'),
+('Derya','Öztürk','derya10@mail.com','101','123'),
+('Kemal','Aslan','kemal11@mail.com','102','123'),
+('Hale','Doğan','hale12@mail.com','103','123'),
+('Murat','Kurt','murat13@mail.com','104','123'),
+('Selin','Ak','selin14@mail.com','105','123'),
+('Okan','Güneş','okan15@mail.com','106','123'),
+('Ece','Bulut','ece16@mail.com','107','123'),
+('Serkan','Polat','serkan17@mail.com','108','123'),
+('Buse','Er','buse18@mail.com','109','123'),
+('Emre','Tekin','emre19@mail.com','110','123'),
+('Naz','Işık','naz20@mail.com','111','123');
+
+
+
+
+INSERT INTO Musteri (kullanici_id, dogrulanmis_ihtiyac_sahibi)
+SELECT kullanici_id,
+CASE WHEN kullanici_id % 5 = 0 THEN 1 ELSE 0 END
+FROM Kullanici;
+
+
+
+
+INSERT INTO Kurye (kullanici_id, arac_tipi)
+VALUES (1,'Motor'),(2,'Bisiklet'),(3,'Araba'),(4,'Motor'),(5,'Motor');
+
+
+
+
+INSERT INTO Admin (kullanici_id, yetki_seviyesi)
+VALUES (6,1);
+
+
+
+
+INSERT INTO Adres (kullanici_id, adres_metni, il, ilce, posta_kodu)
+VALUES
+(1,'Adres 1','Van','İpekyolu','65000'),
+(2,'Adres 2','Van','Edremit','65010'),
+(3,'Adres 3','Van','Tuşba','65020'),
+(4,'Restoran Adres 1','Van','İpekyolu','65000'),
+(5,'Restoran Adres 2','Van','Edremit','65010');
+
+
+
+
+INSERT INTO Restoran (ad, telefon, adres_id, puan)
+VALUES
+('Pizza House','111',4,4.5),
+('Burger King','222',5,4.2),
+('Kebapçı','333',4,4.7),
+('Cafe','444',5,4.0),
+('Ev Yemekleri','555',4,4.8);
+
+
+
+
+INSERT INTO Menu (restoran_id, ad)
+VALUES
+(1,'Ana Menü'),
+(2,'Ana Menü'),
+(3,'Ana Menü'),
+(4,'Ana Menü'),
+(5,'Ana Menü');
+
+
+
+
+INSERT INTO MenuKategori (menu_id, kategori_ad)
+VALUES
+(1,'Pizza'),(1,'İçecek'),
+(2,'Burger'),(2,'İçecek'),
+(3,'Kebap'),(3,'İçecek'),
+(4,'Tatlı'),(4,'İçecek'),
+(5,'Ev Yemeği'),(5,'İçecek');
+
+
+
+
+INSERT INTO MenuUrun (kategori_id, urun_ad, fiyat)
+SELECT 
+(kategori_id),
+CONCAT('Urun ',kategori_id,'-',v.number),
+(10 + v.number)
+FROM MenuKategori
+CROSS JOIN master..spt_values v
+WHERE v.type='P' AND v.number BETWEEN 1 AND 5;
+
+
+
+
+INSERT INTO Sepet (musteri_id, restoran_id)
+VALUES
+(1,1),(2,2),(3,3),(4,4),(5,5);
+
+
+
+
+INSERT INTO SepetDetay (sepet_id, urun_id, adet, birim_fiyat)
+VALUES
+(1,1,2,20),
+(2,2,1,15),
+(3,3,3,30),
+(4,4,1,25),
+(5,5,2,18);
+
+
+
+
+INSERT INTO Siparis (musteri_id, restoran_id, kurye_id, adres_id, siparis_tutari, durum, teslimat_turu)
+SELECT
+(musteri_id),
+((musteri_id % 5) + 1),
+CASE WHEN musteri_id % 2 = 0 THEN 1 ELSE NULL END,
+1,
+50 + musteri_id,
+'Delivered',
+CASE WHEN musteri_id % 2 = 0 THEN 'delivery' ELSE 'pickup' END
+FROM Musteri
+CROSS JOIN (SELECT TOP 5 1 x FROM sys.objects) t;
+
+
+
+
+INSERT INTO SiparisDetay (siparis_id, urun_id, adet, birim_fiyat)
+SELECT
+siparis_id,
+((siparis_id % 10) + 1),
+1 + (siparis_id % 3),
+20
+FROM Siparis;
+
+
+
+
+INSERT INTO Odeme (siparis_id, odeme_turu, tutar, odeme_durumu)
+SELECT
+siparis_id,
+CASE WHEN siparis_id % 5 = 0 THEN 'askida_yemek' ELSE 'kart' END,
+siparis_tutari,
+'Basarili'
+FROM Siparis;
+
+
+
+
+INSERT INTO AskidaYemekHavuzu (toplam_bakiye)
+VALUES (1000);
+
+
+
+
+INSERT INTO AskidaYemekBagis (musteri_id, havuz_id, tutar, anonim_mi)
+VALUES
+(1,1,50,0),
+(2,1,30,1),
+(3,1,20,0),
+(4,1,40,1);
+
+
+
+
+INSERT INTO AskidaYemekKullanim (musteri_id, siparis_id, havuz_id, odeme_id, tutar)
+SELECT
+m.musteri_id,
+o.siparis_id,
+1,
+od.odeme_id,
+od.tutar
+FROM Odeme od
+JOIN Siparis o ON od.siparis_id = o.siparis_id
+JOIN Musteri m ON o.musteri_id = m.musteri_id
+WHERE od.odeme_turu = 'askida_yemek';
+
+
+
+
+INSERT INTO Degerlendirme (musteri_id, restoran_id, puan, yorum)
+VALUES
+(1,1,5,'Harika'),
+(2,2,4,'İyi'),
+(3,3,5,'Mükemmel'),
+(4,4,3,'Orta'),
+(5,5,5,'Çok iyi');
