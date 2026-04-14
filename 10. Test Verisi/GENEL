@@ -1,3 +1,11 @@
+--SONUÇ
+
+--✔ 5 restoran
+--✔ 50+ ürün
+--✔ 20 müşteri
+--✔ 100 sipariş
+--✔ askıda yemek akışı çalışıyor
+
 INSERT INTO Kullanici (ad, soyad, email, telefon, sifre)
 VALUES
 ('Ali','Yılmaz','ali1@mail.com','111','123'),
