@@ -1,0 +1,10 @@
+--Soru: Hiç askıda yemek bağışı yapmamış müşterileri listele.
+
+SELECT 
+    k.ad,
+    k.soyad
+FROM Musteri m
+JOIN Kullanici k ON m.kullanici_id = k.kullanici_id
+WHERE m.musteri_id NOT IN (
+    SELECT DISTINCT musteri_id FROM AskidaYemekBagis
+);
