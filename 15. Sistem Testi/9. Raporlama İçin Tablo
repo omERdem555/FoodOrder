@@ -1,0 +1,9 @@
+| Test           | Amaç                   | Beklenen |
+| -------------- | ---------------------- | -------- |
+| FK             | Geçersiz ilişki engeli | Hata     |
+| CHECK          | Negatif değer engeli   | Hata     |
+| UNIQUE         | Tekil alan koruma      | Hata     |
+| Trigger Insert | Havuz artışı           | Başarılı |
+| Trigger Usage  | Havuz azalışı          | Başarılı |
+| Trigger Block  | Negatif bakiye önleme  | Hata     |
+| View           | Sanal tablo            | Başarılı |
