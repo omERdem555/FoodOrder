@@ -1,0 +1,69 @@
+Bu projede yapay zeka araçları (özellikle ChatGPT) yalnızca yardımcı ve yönlendirici bir araç olarak kullanılmıştır. Projenin tasarım, karar verme ve öğrenme süreçlerinde sorumluluk tamamen bana aittir.
+
+1. Sistem Analizi ve Tasarım Aşaması
+
+Yapay zeka şu konularda destek amaçlı kullanılmıştır:
+-Proje kapsamının anlaşılması ve fazlara ayrılması
+-Çevrimiçi yemek sipariş sistemi için olası varlıkların (entity) belirlenmesi
+-Askıda Yemek modülünün mantıksal olarak nasıl modellenebileceğinin tartışılması
+-Kullanıcı, restoran, sipariş, ödeme ve sepet gibi temel yapının ilişkisel olarak kurgulanması
+Bu aşamada AI yalnızca alternatif düşünce üretmek için kullanılmış, nihai kararları ben verdim.
+
+
+
+
+2. Veritabanı Modelleme (ER ve İlişkiler)
+-Entity listesi oluşturulurken öneri ve doğrulama amacıyla kullanılmıştır.
+-1-N ve N-M ilişkilerin doğru modellenmesi konusunda kontrol amaçlı destek alınmıştır.
+-Sipariş – ürün ilişkisi için SiparişDetay yapısının gerekliliği gibi tasarım kararları tartışılmıştır.
+-Sepet ve Sipariş ayrımının mantıksal olarak doğru kurulması sürecinde açıklama ve örnekleme desteği alınmıştır.
+
+
+
+
+3. SQL Tasarımı (DDL ve Constraint Yapısı)
+
+-CREATE TABLE yapılarında doğru FK–PK ilişkilerinin kurulması için örnekler alınmıştır.
+-CHECK, UNIQUE ve NOT NULL constraint’lerinin doğru kullanımına dair doğrulama yapılmıştır.
+-Askıda Yemek havuzu ve kullanım mantığındaki constraint tasarımları analiz edilmiştir.
+-Trigger mantığının (havuz bakiyesi güncelleme, negatif bakiye engelleme) nasıl kurgulanacağı konusunda fikir desteği alınmıştır.
+
+
+
+
+4. Analitik SQL Sorguları
+
+JOIN, GROUP BY ve SUBQUERY yapılarının nasıl doğru kullanılacağı öğrenme amaçlı tartışılmıştır. Özellikle:
+-müşteri sipariş geçmişi
+-ürün bazlı satış analizleri
+-askıda yemek kullanmayan kullanıcıların listelenmesi
+gibi sorgular için mantıksal yönlendirme alınmıştır.
+
+
+
+
+5. View, Trigger ve Index Tasarımı
+
+-View kullanımının ne amaçla yapıldığı ve hangi senaryolarda gerekli olduğu öğrenilmiştir.
+-Trigger kullanımının iş kuralı otomasyonu için nasıl kullanılacağı analiz edilmiştir.
+-Index yapısının performans üzerindeki etkisi ve hangi kolonlara uygulanması gerektiği konusunda açıklama alınmıştır.
+
+
+
+
+6. Hata Analizi ve Debug Süreci
+
+-UNIQUE constraint hataları
+-FOREIGN KEY hataları
+-Trigger kaynaklı transaction hataları
+gibi SQL hatalarının nedenleri AI desteği ile analiz edilmiştir. Ancak çözümler doğrudan uygulanmamış, mantığı anlaşılacak şekilde değerlendirilmiştir.
+
+
+
+
+7. Genel Kullanım Prensibi
+
+Yapay zeka:
+-Kod üreticisi olarak değil
+-Tasarım doğrulayıcı ve öğretici bir araç olarak kullanılmıştır
+Tüm veri modeli, tablo yapıları ve ilişkisel kararlar nihai olarak tarafımca oluşturulmuştur.
