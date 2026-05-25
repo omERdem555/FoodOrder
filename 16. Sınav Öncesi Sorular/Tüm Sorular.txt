@@ -9,7 +9,7 @@ BÖLÜM 1 — TEMEL SELECT, WHERE, ORDER BY
         En yüksek puan üstte olacak
 
     Görev 3
-    Fiyatı 200 TL’den büyük olan ürünlerin:
+    Fiyatı 12 TL’den büyük olan ürünlerin:
         ürün adı
         fiyat
         aktiflik durumu
