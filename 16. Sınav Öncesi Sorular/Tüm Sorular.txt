@@ -27,7 +27,7 @@ BÖLÜM 2 — INSERT, UPDATE, DELETE
         Puan: 4.5
 
     Görev 5
-    MenuUrun tablosunda adı “Ayran” olan ürünün fiyatını %15 artırınız.
+    MenuUrun tablosunda adı 'Urun 1-1' olan ürünün fiyatını %15 artırınız.
 
     Görev 6
     Aktif olmayan ürünleri fiziksel olarak silmek yerine pasife çekmek istiyoruz.
