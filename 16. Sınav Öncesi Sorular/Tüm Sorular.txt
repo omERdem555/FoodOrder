@@ -18,6 +18,18 @@ BÖLÜM 1 — TEMEL SELECT, WHERE, ORDER BY
 
 
 BÖLÜM 2 — INSERT, UPDATE, DELETE
+
+    Insert into TabloAdı (GerekliSütunlar)
+    Values
+    ('SütunlarınYeniDeğerleri');
+
+    Update TabloAdı
+    Set Sütun1 = YeniDeğer1, Sütun2 = YeniDeğer2 ...
+    Where Koşul;
+
+    Delete From TabloAdı
+    Where Koşul;
+
     Görev 4
     Sisteme yeni bir restoran ekleyiniz.
     Bilgiler:
@@ -31,7 +43,7 @@ BÖLÜM 2 — INSERT, UPDATE, DELETE
 
     Görev 6
     Aktif olmayan ürünleri fiziksel olarak silmek yerine pasife çekmek istiyoruz.
-    Adı “Eski Menü” olan ürünün aktif_mi değerini 0 yapınız.
+    Adı “Urun 6-5” olan ürünün aktif_mi değerini 0 yapınız.
 
 
 BÖLÜM 3 — JOIN SORGULARI
