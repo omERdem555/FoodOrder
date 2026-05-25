@@ -1,0 +1,209 @@
+BÖLÜM 1 — TEMEL SELECT, WHERE, ORDER BY
+    Görev 1
+    Kullanici tablosundaki tüm kullanıcıların ad, soyad ve email bilgilerini listeleyen sorguyu yazınız.
+
+    Görev 2
+    Aktif olan restoranların ad ve puan bilgilerini puana göre azalan şekilde listeleyiniz.
+    Şartlar:
+        Sadece aktif restoranlar
+        En yüksek puan üstte olacak
+
+    Görev 3
+    Fiyatı 200 TL’den büyük olan ürünlerin:
+        ürün adı
+        fiyat
+        aktiflik durumu
+    bilgilerini listeleyiniz.
+
+
+
+BÖLÜM 2 — INSERT, UPDATE, DELETE
+    Görev 4
+    Sisteme yeni bir restoran ekleyiniz.
+    Bilgiler:
+        Ad: Lezzet Durağı
+        Telefon: 05554443322
+        AdresID: 3
+        Puan: 4.5
+
+    Görev 5
+    MenuUrun tablosunda adı “Ayran” olan ürünün fiyatını %15 artırınız.
+
+    Görev 6
+    Aktif olmayan ürünleri fiziksel olarak silmek yerine pasife çekmek istiyoruz.
+    Adı “Eski Menü” olan ürünün aktif_mi değerini 0 yapınız.
+
+
+BÖLÜM 3 — JOIN SORGULARI
+    Görev 7
+    Müşterilerin:
+        ad
+        soyad
+        sipariş ID
+        sipariş tutarı
+    bilgilerini listeleyen sorguyu yazınız.
+
+    Kullanılacak tablolar:
+        Kullanici
+        Musteri
+        Siparis
+
+    Görev 8
+    Sipariş veren müşterilerin:
+        adı soyadı
+        restoran adı
+        sipariş tarihi
+        sipariş durumu
+    bilgilerini listeleyiniz.
+
+    Görev 9
+    Her siparişte bulunan ürünlerin:
+        sipariş ID
+        ürün adı
+        adet
+        birim fiyat
+    bilgilerini listeleyiniz.
+
+    Kullanılacak tablolar:
+        SiparisDetay
+        MenuUrun
+
+    Görev 10
+    Kuryeye atanmış siparişlerin:
+        müşteri adı soyadı
+        kurye adı soyadı
+        sipariş tutarı
+        durum
+    bilgilerini listeleyiniz.
+
+    İpucu:
+        Aynı Kullanici tablosu iki kez kullanılacak.
+
+
+
+BÖLÜM 4 — GROUP BY, AGGREGATE, HAVING
+    Görev 11
+    Her restoranın toplam sipariş sayısını bulunuz.
+        İstenenler:
+        restoran adı
+        toplam sipariş sayısı
+
+    Görev 12
+    Her müşterinin toplam harcama tutarını hesaplayınız.
+    İstenenler:
+        müşteri adı soyadı
+        toplam harcama
+
+    Görev 13
+    Her ürünün toplam kaç adet satıldığını listeleyiniz.
+    İstenenler:
+        ürün adı
+        toplam satış adedi
+    Azalan sırada sıralayınız.
+
+    Görev 14
+    Toplam sipariş tutarı 1000 TL’den büyük olan müşterileri listeleyiniz.
+    İstenenler:
+        müşteri adı soyadı
+        toplam harcama
+    İpucu:
+        HAVING kullanınız.
+
+    Görev 15
+    Restoran bazlı ortalama sipariş tutarlarını hesaplayınız.
+    İstenenler:
+        restoran adı
+        ortalama sipariş tutarı
+
+
+
+BÖLÜM 5 — CASE, METİN, TARİH FONKSİYONLARI
+    Görev 16
+    Müşterilerin:
+        ad soyad bilgisini BÜYÜK HARFLİ şekilde
+        sisteme kayıt olalı kaç gün geçtiğini
+    listeleyen sorguyu yazınız.
+
+    İstenen sütunlar:
+        TamAd
+        KayitGunSayisi
+
+    Görev 17
+    Siparişleri tutarlarına göre sınıflandırınız.
+    Kurallar:
+        0-200 → Küçük Sipariş
+        201-500 → Orta Sipariş
+        501+ → Büyük Sipariş
+    İstenenler:
+        siparis_id
+        siparis_tutari
+        SiparisTipi
+    CASE kullanınız.
+
+    Görev 18
+    Restoranları puanlarına göre sınıflandırınız.
+    Kurallar:
+        0-2 → Düşük Puan
+        2-4 → Orta Seviye
+        4-5 → Yüksek Puan
+
+
+
+BÖLÜM 6 — SUBQUERY, EXISTS, NOT EXISTS
+    Görev 19
+    Hiç sipariş vermemiş müşterileri listeleyiniz.
+    İstenenler:
+        ad
+        soyad
+    NOT EXISTS kullanınız.
+
+    Görev 20
+    Askıda yemek bağışı yapmış müşterileri listeleyiniz.
+    IN veya EXISTS kullanınız.
+
+    Görev 21
+    Hiç askıda yemek kullanmamış doğrulanmış ihtiyaç sahibi müşterileri listeleyiniz.
+    Kullanılacak tablolar:
+        Musteri
+        AskidaYemekKullanim
+        Kullanici
+
+
+
+BÖLÜM 7 — VIEW
+    Görev 22
+    vw_restoran_siparis_ozeti adında bir VIEW oluşturunuz.
+    İstenen sütunlar:
+        restoran adı
+        toplam sipariş sayısı
+        toplam gelir
+        ortalama sipariş tutarı
+
+    Görev 23
+    vw_aktif_urunler adında bir VIEW oluşturunuz.
+    Sadece:
+        aktif ürünler
+        kategori adı
+        ürün adı
+        fiyat
+    bilgileri bulunmalıdır.
+
+
+
+BÖLÜM 8 — EXCEPT, INTERSECT, UNION
+    Görev 24
+    EXCEPT kullanarak:
+    Hiç sipariş edilmemiş ürünlerin urun_id listesini getiriniz.
+    Birinci küme:
+        tüm ürünler
+    İkinci küme:
+        sipariş detayında bulunan ürünler
+
+    Görev 25
+    UNION kullanarak:
+        Hem restoran şehirlerini hem kullanıcı şehirlerini tek bir sonuç kümesinde birleştiriniz.
+    İstenen:
+        şehir adı listesi
+        tekrar eden şehirler yalnızca 1 kez görünmeli
+    İpucu:
+        Adres tablosunu kullanmanız gerekiyor.
