@@ -114,7 +114,7 @@ BÖLÜM 4 — GROUP BY, AGGREGATE, HAVING
     Azalan sırada sıralayınız.
 
     Görev 14
-    Toplam sipariş tutarı 1000 TL’den büyük olan müşterileri listeleyiniz.
+    Toplam sipariş tutarı 50TL’den büyük olan müşterileri listeleyiniz.
     İstenenler:
         müşteri adı soyadı
         toplam harcama
