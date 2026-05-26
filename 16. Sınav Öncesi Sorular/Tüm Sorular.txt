@@ -148,6 +148,21 @@ BÖLÜM 5 — CASE, METİN, TARİH FONKSİYONLARI
         TamAd
         KayitGunSayisi
 
+
+    Select x, y,
+    Case 
+        When Koşul1 Then Değeri1
+        When Koşul2 Then Değeri2
+    End as SütunAdı
+    From TabloAdı
+
+    Select x, y,
+    Case z
+        When Durum1 Then Değeri1
+        Else SonDeğer
+    End as SütunAdı
+    From TabloAdı
+
     Görev 17
     Siparişleri tutarlarına göre sınıflandırınız.
     Kurallar:
