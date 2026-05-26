@@ -151,9 +151,9 @@ BÖLÜM 5 — CASE, METİN, TARİH FONKSİYONLARI
     Görev 17
     Siparişleri tutarlarına göre sınıflandırınız.
     Kurallar:
-        0-200 → Küçük Sipariş
-        201-500 → Orta Sipariş
-        501+ → Büyük Sipariş
+        0-55 → Küçük Sipariş
+        56-60 → Orta Sipariş
+        61+ → Büyük Sipariş
     İstenenler:
         siparis_id
         siparis_tutari
