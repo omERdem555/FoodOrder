@@ -183,7 +183,6 @@ BÖLÜM 5 — CASE, METİN, TARİH FONKSİYONLARI
         4-5 → Yüksek Puan
 
 
-
 BÖLÜM 6 — SUBQUERY, EXISTS, NOT EXISTS
     Görev 19
     Hiç sipariş vermemiş müşterileri listeleyiniz.
