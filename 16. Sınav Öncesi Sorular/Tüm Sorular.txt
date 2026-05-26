@@ -46,6 +46,7 @@ BÖLÜM 2 — INSERT, UPDATE, DELETE
     Adı “Urun 6-5” olan ürünün aktif_mi değerini 0 yapınız.
 
 
+
 BÖLÜM 3 — JOIN SORGULARI
     Görev 7
     Müşterilerin:
