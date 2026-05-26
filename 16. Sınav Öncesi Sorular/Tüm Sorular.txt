@@ -113,8 +113,15 @@ BÖLÜM 4 — GROUP BY, AGGREGATE, HAVING
         toplam satış adedi
     Azalan sırada sıralayınız.
 
+
+    Sekect SutunAdi_1, AggragateFonskiyonu(SutunAdi_2)
+    From TabloAdı
+    Where Şartlar
+    Group By SutunAdi_1
+    Having AggragateFonskiyonu(SutunAdi_2)
+
     Görev 14
-    Toplam sipariş tutarı 50TL’den büyük olan müşterileri listeleyiniz.
+    Toplam sipariş tutarı 300TL’den büyük olan müşterileri listeleyiniz.
     İstenenler:
         müşteri adı soyadı
         toplam harcama
