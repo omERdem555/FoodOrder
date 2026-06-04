@@ -11,11 +11,12 @@ Bölüm 1 — GROUP BY Mantığını Oturtma
 
 
         Cevap 1
-            Select r.ad as Restoran_Ad, mk.ad as Menu_Kategori, Count(mu.urun_id) as Urun_Sayisi
-            From MenuUrun as mu
-            Join Restoran as r on mu.kategori_id = r.restoran_id
-            Join MenuKategori as mk on mu.kategori_id = mk.kategori_id
-            Group By r.ad, mk.ad
+            SELECT r.ad as Restoran_Ad, COUNT(mu.urun_id) AS ToplamUrun
+            FROM Restoran r
+            JOIN Menu m ON r.restoran_id = m.restoran_id
+            JOIN MenuKategori mk ON m.menu_id = mk.menu_id
+            JOIN MenuUrun mu ON mk.kategori_id = mu.kategori_id
+            GROUP BY r.ad;
 
 
     Soru 2
@@ -29,12 +30,12 @@ Bölüm 1 — GROUP BY Mantığını Oturtma
             MAX()
             GROUP BY
 
-        Select r.ad as restoran_ad, Max(mu.fiyat) as max_fiyat, Min(mu.fiyat) as min_fiyat
-        From Menu as m 
-        Join MenuKategori as mk on m.menu_id = mk.menu_id
-        Join MenuUrun as mu on mk.kategori_id= mu.kategori_id
-        Join Restoran as r on m.restoran_id = r.restoran_id
-        Group by r.ad
+            Select r.ad as restoran_ad, Max(mu.fiyat) as AS EnPahaliUrun, Min(mu.fiyat) as EnUcuzUrun
+            From Menu as m 
+            Join MenuKategori as mk on m.menu_id = mk.menu_id
+            Join MenuUrun as mu on mk.kategori_id= mu.kategori_id
+            Join Restoran as r on m.restoran_id = r.restoran_id
+            Group by r.ad
 
 
     Soru 3
@@ -44,10 +45,11 @@ Bölüm 1 — GROUP BY Mantığını Oturtma
             toplam sipariş sayısını
         hesaplayınız.
 
-        Select Sum(s.siparis_tutari) as ToplamGelir, Avg(s.siparis_tutari) as OrtalamaSiparisTutari, Count(s.siparis_id) as ToplamSiparisSayisi
-        From Musteri as m 
-        Join Siparis as s On m.musteri_id = s.musteri_id
-        Group By m.musteri_id
+        SELECT k.ad + ' ' + k.soyad AS Musteri, SUM(s.siparis_tutari) AS ToplamTutar, AVG(s.siparis_tutari) AS OrtalamaTutar, COUNT(s.siparis_id) AS ToplamSiparisSayisi
+        FROM Musteri as m
+        JOIN Kullanici as k ON m.kullanici_id = k.kullanici_id
+        JOIN Siparis as s ON m.musteri_id = s.musteri_id
+        GROUP BY k.ad, k.soyad;
 
 
     Soru 4

@@ -1,4 +1,5 @@
-Select Sum(s.siparis_tutari) as ToplamGelir, Avg(s.siparis_tutari) as OrtalamaSiparisTutari, Count(s.siparis_id) as ToplamSiparisSayisi
-From Musteri as m 
-Join Siparis as s On m.musteri_id = s.musteri_id
-Group By m.musteri_id
+SELECT k.ad + ' ' + k.soyad AS Musteri, SUM(s.siparis_tutari) AS ToplamTutar, AVG(s.siparis_tutari) AS OrtalamaTutar, COUNT(s.siparis_id) AS ToplamSiparisSayisi
+FROM Musteri as m
+JOIN Kullanici as k ON m.kullanici_id = k.kullanici_id
+JOIN Siparis as s ON m.musteri_id = s.musteri_id
+GROUP BY k.ad, k.soyad;
