@@ -112,14 +112,22 @@ Bölüm 2 — HAVING Mantığını Oturtma
         Join Siparis as s on m.musteri_id = s.musteri_id
         Join Kullanici as k on m.kullanici_id = k.kullanici_id
         Group By k.ad, k.soyad
-        Having Count(s.siparis_id) > 3
+        Having Count(s.siparis_id) >= 3
 
 
     Soru 8
-        Menüsünde 10'dan fazla ürün bulunan restoranları listeleyiniz.
+        Menüsünde 5'ten fazla ürün bulunan restoranları listeleyiniz.
         Gösterilecek alanlar:
             restoran adı
             ürün sayısı
+
+        Select r.ad as Restoran_Ad, Count(mu.urun_id) as Urun_Sayisi
+        From Restoran as r
+        Join Menu as m On r.restoran_id = m.restoran_id
+        Join MenuKategori as mk On m.menu_id = mk.menu_id
+        Join MenuUrun as mu On mk.kategori_id = mu.kategori_id
+        Group By r.ad
+        Having Count(mu.urun_id) > 5
 
 
     Soru 9
