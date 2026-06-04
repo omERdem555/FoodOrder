@@ -136,6 +136,10 @@ Bölüm 2 — HAVING Mantığını Oturtma
             restoran adı
             toplam ciro
 
+        Select r.ad as Restoran_Ad, r.toplam_gelir as Toplam_Ciro
+        From Restoran as r
+        Where toplam_gelir > 1000
+
 
     Soru 10
         Ortalama sipariş tutarı 60 TL'den büyük olan restoranları bulunuz.
