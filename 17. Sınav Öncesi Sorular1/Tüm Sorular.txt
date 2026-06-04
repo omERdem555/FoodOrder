@@ -93,12 +93,12 @@ Bölüm 2 — HAVING Mantığını Oturtma
             müşteri adı soyadı
             toplam harcama
 
-    Select k.ad, k.soyad, Sum(s.siparis_tutari) as toplam_harcama
-    From Musteri as m 
-    Join Kullanici as k on m.kullanici_id = k.kullanici_id
-    Join Siparis as s On m.musteri_id = s.musteri_id
-    Group by m.musteri_id, k.ad, k.soyad
-    Having Sum(s.siparis_tutari) > 100
+        Select k.ad, k.soyad, Sum(s.siparis_tutari) as toplam_harcama
+        From Musteri as m 
+        Join Kullanici as k on m.kullanici_id = k.kullanici_id
+        Join Siparis as s On m.musteri_id = s.musteri_id
+        Group by m.musteri_id, k.ad, k.soyad
+        Having Sum(s.siparis_tutari) > 100
 
 
     Soru 7
@@ -106,6 +106,13 @@ Bölüm 2 — HAVING Mantığını Oturtma
         Gösterilecek alanlar:
             müşteri adı soyadı
             sipariş sayısı
+
+        Select k.ad, k.soyad, Count(s.siparis_id) as toplam_siparis
+        From Musteri as m 
+        Join Siparis as s on m.musteri_id = s.musteri_id
+        Join Kullanici as k on m.kullanici_id = k.kullanici_id
+        Group By k.ad, k.soyad
+        Having Count(s.siparis_id) > 3
 
 
     Soru 8
