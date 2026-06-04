@@ -88,10 +88,17 @@ Bölüm 1 — GROUP BY Mantığını Oturtma
 
 Bölüm 2 — HAVING Mantığını Oturtma
     Soru 6
-        Toplam sipariş tutarı 500 TL'den fazla olan müşterileri listeleyiniz.
+        Toplam sipariş tutarı 100 TL'den fazla olan müşterileri listeleyiniz.
         Gösterilecek alanlar:
             müşteri adı soyadı
             toplam harcama
+
+    Select k.ad, k.soyad, Sum(s.siparis_tutari) as toplam_harcama
+    From Musteri as m 
+    Join Kullanici as k on m.kullanici_id = k.kullanici_id
+    Join Siparis as s On m.musteri_id = s.musteri_id
+    Group by m.musteri_id, k.ad, k.soyad
+    Having Sum(s.siparis_tutari) > 100
 
 
     Soru 7
