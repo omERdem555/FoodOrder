@@ -1,260 +1,210 @@
 Bölüm 1 — GROUP BY Mantığını Oturtma
-Soru 1
+    Soru 1
+        Her restoran için:
+            restoran adı
+            menüsünde bulunan toplam ürün sayısı
+        bilgilerini listeleyiniz.
+        İpucu:
+            Restoran
+            MenuKategori
+            MenuUrun
 
-Her restoran için:
 
-restoran adı
-menüsünde bulunan toplam ürün sayısı
+    Soru 2
+        Her restoran için:
+            restoran adı
+            menüsündeki en pahalı ürün fiyatı
+            menüsündeki en ucuz ürün fiyatı
+        bilgilerini getiriniz.
+        Kullanılması gerekenler:
+            MIN()
+            MAX()
+            GROUP BY
 
-bilgilerini listeleyiniz.
 
-İpucu:
+    Soru 3
+        Her müşterinin verdiği siparişlerin:
+            toplam tutarını
+            ortalama sipariş tutarını
+            toplam sipariş sayısını
+        hesaplayınız.
 
-Restoran
-MenuKategori
-MenuUrun
-Soru 2
 
-Her restoran için:
+    Soru 4
+        Her kuryenin:
+            teslim ettiği sipariş sayısını
+            teslim ettiği siparişlerin toplam tutarını
+        hesaplayınız.
+        Sadece:
+            Delivered
+        olan siparişleri dahil ediniz.
 
-restoran adı
-menüsündeki en pahalı ürün fiyatı
-menüsündeki en ucuz ürün fiyatı
 
-bilgilerini getiriniz.
+    Soru 5
+        Her ürün için:
+            toplam kaç siparişte geçtiğini
+            toplam kaç adet satıldığını
+        listeleyiniz.
+        Bu soru özellikle:
+            COUNT mı?
+            SUM mı?
+        ayrımını öğretmek için önemli.
 
-Kullanılması gerekenler:
 
-MIN()
-MAX()
-GROUP BY
-Soru 3
 
-Her müşterinin verdiği siparişlerin:
-
-toplam tutarını
-ortalama sipariş tutarını
-toplam sipariş sayısını
-
-hesaplayınız.
-
-Soru 4
-
-Her kuryenin:
-
-teslim ettiği sipariş sayısını
-teslim ettiği siparişlerin toplam tutarını
-
-hesaplayınız.
-
-Sadece:
-
-Delivered
-
-olan siparişleri dahil ediniz.
-
-Soru 5
-
-Her ürün için:
-
-toplam kaç siparişte geçtiğini
-toplam kaç adet satıldığını
-
-listeleyiniz.
-
-Bu soru özellikle:
-
-COUNT mı?
-SUM mı?
-
-ayrımını öğretmek için önemli.
 
 Bölüm 2 — HAVING Mantığını Oturtma
-Soru 6
+    Soru 6
+        Toplam sipariş tutarı 500 TL'den fazla olan müşterileri listeleyiniz.
+        Gösterilecek alanlar:
+            müşteri adı soyadı
+            toplam harcama
 
-Toplam sipariş tutarı 500 TL'den fazla olan müşterileri listeleyiniz.
 
-Gösterilecek alanlar:
+    Soru 7
+        En az 3 sipariş vermiş müşterileri listeleyiniz.
+        Gösterilecek alanlar:
+            müşteri adı soyadı
+            sipariş sayısı
 
-müşteri adı soyadı
-toplam harcama
-Soru 7
 
-En az 3 sipariş vermiş müşterileri listeleyiniz.
+    Soru 8
+        Menüsünde 10'dan fazla ürün bulunan restoranları listeleyiniz.
+        Gösterilecek alanlar:
+            restoran adı
+            ürün sayısı
 
-Gösterilecek alanlar:
 
-müşteri adı soyadı
-sipariş sayısı
-Soru 8
+    Soru 9
+        Toplam cirosu 1000 TL üzerindeki restoranları listeleyiniz.
+        Gösterilecek alanlar:
+            restoran adı
+            toplam ciro
 
-Menüsünde 10'dan fazla ürün bulunan restoranları listeleyiniz.
 
-Gösterilecek alanlar:
+    Soru 10
+        Ortalama sipariş tutarı 60 TL'den büyük olan restoranları bulunuz.
 
-restoran adı
-ürün sayısı
-Soru 9
 
-Toplam cirosu 1000 TL üzerindeki restoranları listeleyiniz.
 
-Gösterilecek alanlar:
-
-restoran adı
-toplam ciro
-Soru 10
-
-Ortalama sipariş tutarı 60 TL'den büyük olan restoranları bulunuz.
 
 Bölüm 3 — Alt Sorgu (Subquery)
-Soru 11
+    Soru 11
+        Sistem genelindeki ortalama sipariş tutarından daha yüksek tutarlı siparişleri listeleyiniz.
+        Gösterilecek alanlar:
+            siparis_id
+            siparis_tutari
 
-Sistem genelindeki ortalama sipariş tutarından daha yüksek tutarlı siparişleri listeleyiniz.
 
-Gösterilecek alanlar:
+    Soru 12
+        En yüksek puanlı restoranın tüm bilgilerini getiriniz.
+        İpucu:
+            MAX()
+        tek başına yetmeyecek.
 
-siparis_id
-siparis_tutari
-Soru 12
 
-En yüksek puanlı restoranın tüm bilgilerini getiriniz.
+    Soru 13
+        Hiç sipariş vermemiş müşterileri bulunuz.
+        Bu soruyu:
+            Yöntem 1
+                NOT EXISTS
+            ile
+            Yöntem 2
+                NOT IN
+        ile çözünüz.
+        Sonuçların aynı olup olmadığını inceleyiniz.
 
-İpucu:
 
-MAX()
+    Soru 14
+        Toplam harcaması sistem ortalamasından yüksek olan müşterileri listeleyiniz.
+        Bu soru ilk ciddi analitik sorulardan biridir.
 
-tek başına yetmeyecek.
 
-Soru 13
+    Soru 15
+        En çok sipariş veren müşteriyi bulunuz.
+        TOP kullanmadan çözmeye çalışınız.
 
-Hiç sipariş vermemiş müşterileri bulunuz.
 
-Bu soruyu:
 
-Yöntem 1
-
-NOT EXISTS
-
-ile
-
-Yöntem 2
-
-NOT IN
-
-ile çözünüz.
-
-Sonuçların aynı olup olmadığını inceleyiniz.
-
-Soru 14
-
-Toplam harcaması sistem ortalamasından yüksek olan müşterileri listeleyiniz.
-
-Bu soru ilk ciddi analitik sorulardan biridir.
-
-Soru 15
-
-En çok sipariş veren müşteriyi bulunuz.
-
-TOP kullanmadan çözmeye çalışınız.
 
 Bölüm 4 — EXISTS / NOT EXISTS
-Soru 16
+    Soru 16
+        Hiç askıda yemek bağışı yapmamış müşterileri listeleyiniz.
 
-Hiç askıda yemek bağışı yapmamış müşterileri listeleyiniz.
 
-Soru 17
+    Soru 17
+        Hem bağış yapmış hem de sipariş vermiş müşterileri listeleyiniz.
+        EXISTS kullanınız.
 
-Hem bağış yapmış hem de sipariş vermiş müşterileri listeleyiniz.
 
-EXISTS kullanınız.
+    Soru 18
+        Hiç teslim edilmiş siparişi bulunmayan kuryeleri listeleyiniz.
+        NOT EXISTS kullanınız.
 
-Soru 18
 
-Hiç teslim edilmiş siparişi bulunmayan kuryeleri listeleyiniz.
+    Soru 19
+        Menüsündeki tüm ürünleri aktif olan restoranları bulunuz.
+        Bu soru biraz düşündürecek.
 
-NOT EXISTS kullanınız.
 
-Soru 19
+    Soru 20
+        Hiç sipariş edilmemiş ürünleri listeleyiniz.
+        Ama bu kez:
+            EXCEPT kullanmadan
+            NOT EXISTS kullanarak
+        çözünüz.
 
-Menüsündeki tüm ürünleri aktif olan restoranları bulunuz.
 
-Bu soru biraz düşündürecek.
 
-Soru 20
-
-Hiç sipariş edilmemiş ürünleri listeleyiniz.
-
-Ama bu kez:
-
-EXCEPT kullanmadan
-NOT EXISTS kullanarak
-
-çözünüz.
 
 Bölüm 5 — Gerçek Analitik Sorular
+    Bunlar artık dönem projesi seviyesine daha yakın.
 
-Bunlar artık dönem projesi seviyesine daha yakın.
+    Soru 21
+        Her restoran için:
+            toplam sipariş sayısı
+            toplam gelir
+            ortalama sipariş tutarı
+            en yüksek sipariş tutarı
+            en düşük sipariş tutarı
+        bilgilerini tek sorguda getiriniz.
 
-Soru 21
 
-Her restoran için:
+    Soru 22
+        En fazla farklı restorandan sipariş veren müşterileri bulunuz.
+        Gösterilecek alanlar:
+            müşteri adı soyadı
+            sipariş verdiği farklı restoran sayısı
 
-toplam sipariş sayısı
-toplam gelir
-ortalama sipariş tutarı
-en yüksek sipariş tutarı
-en düşük sipariş tutarı
 
-bilgilerini tek sorguda getiriniz.
+    Soru 23
+        Her ürün kategorisi için:
+            ürün sayısı
+            ortalama fiyat
+            en pahalı ürün
+            en ucuz ürün
+        bilgilerini getiriniz.
+        Bu soru tam GROUP BY pratiği.
 
-Soru 22
 
-En fazla farklı restorandan sipariş veren müşterileri bulunuz.
+    Soru 24
+        Sistemdeki tüm doğrulanmış ihtiyaç sahibi müşteriler için:
+            kaç kez askıda yemek kullandıkları
+            toplam kaç TL yardım aldıkları
+        bilgilerini getiriniz.
+        Burada LEFT JOIN gerekecek.
 
-Gösterilecek alanlar:
 
-müşteri adı soyadı
-sipariş verdiği farklı restoran sayısı
-Soru 23
-
-Her ürün kategorisi için:
-
-ürün sayısı
-ortalama fiyat
-en pahalı ürün
-en ucuz ürün
-
-bilgilerini getiriniz.
-
-Bu soru tam GROUP BY pratiği.
-
-Soru 24
-
-Sistemdeki tüm doğrulanmış ihtiyaç sahibi müşteriler için:
-
-kaç kez askıda yemek kullandıkları
-toplam kaç TL yardım aldıkları
-
-bilgilerini getiriniz.
-
-Burada LEFT JOIN gerekecek.
-
-Soru 25 (En Öğretici)
-
-Sistem ortalamasından daha fazla harcama yapan müşteriler arasında:
-
-toplam sipariş sayısı en fazla olan ilk 3 müşteriyi bulunuz.
-
-Gösterilecek alanlar:
-
-müşteri adı soyadı
-toplam sipariş sayısı
-toplam harcama
-
-Bu soruda birlikte kullanacaksın:
-
-GROUP BY
-HAVING
-Subquery
-ORDER BY
-TOP
+    Soru 25 (En Öğretici)
+    Sistem ortalamasından daha fazla harcama yapan müşteriler arasında:
+        toplam sipariş sayısı en fazla olan ilk 3 müşteriyi bulunuz.
+    Gösterilecek alanlar:
+        müşteri adı soyadı
+        toplam sipariş sayısı
+        toplam harcama
+    Bu soruda birlikte kullanacaksın:
+        GROUP BY
+        HAVING
+        Subquery
+        ORDER BY
+        TOP
